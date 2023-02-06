@@ -1,0 +1,33 @@
+﻿<div class="row" ng-controller="memberCtrl">
+   <div class="col-12">
+       <h3>Members</h3>
+       <div class="d-flex justify-content-end mb-1">
+           <a href="#!/create" class="btn btn-primary"><i class="bi bi-plus btn-sm"></i> Add New</a>
+       </div>
+       <table class="table table-bordered">
+           <thead class="table-light">
+               <tr>
+                   <th>Name</th>
+                   <th>Gender</th>
+                   <th>Phone</th>
+                   <th>District</th>
+                   <th>Thana</th>
+                   <th></th>
+               </tr>
+           </thead>
+           <tbody>
+               <tr ng-repeat="m in model.members">
+                   <td>{{m.Name}}</td>
+                   <td>{{getGenderName(m.Gender)}}</td>
+                   <td>{{m.Phone}}</td>
+                   <td>{{m.District}}</td>
+                   <td>{{m.Thana}}</td>
+                   <td>
+                       <a href="#!/edit/{{m.Id}}" class="btn btn-success btn-sm rounded-circle"><i class="bi bi-pencil"></i></a>
+                       <button href="#" class="btn btn-danger btn-sm rounded-circle"><i class="bi bi-trash"></i></button>
+                   </td>
+               </tr>
+           </tbody>
+       </table>
+   </div>
+</div>
